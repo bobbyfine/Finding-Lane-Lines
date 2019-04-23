@@ -12,7 +12,7 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/grayscale.jpg "Grayscale"
+![alt text](./examples/grayscale.jpg "Grayscale")
 
 ---
 
@@ -31,9 +31,9 @@ Final, I draw lines on original images
 
 Example:
 Original:
-[image1]: /home/workspace/CarND-LaneLines-P1/test_images/solidWhiteCurve.jpg
+![alt text](./test_images/solidWhiteCurve.jpg)
 Final:
-[image2]: /home/workspace/CarND-LaneLines-P1/test_images_output/result_solidWhiteCurve.jpg
+![alt text](./test_images_output/result_solidWhiteCurve.jpg)
 
 In order to draw a single line on the left and right lanes, I modified the draw_lines() function by seperate right and left lines, average the slopes, positions and calculate the final top and bottom x positions.
 
@@ -47,5 +47,5 @@ Second, as we discussed above, I set fixed parameters and assuming the camera is
 
 ### 3. Suggest possible improvements to your pipeline
 
-*Straight line issue: the simple improvement is to draw non-straight curves that best match the changing lane line. Straight line uses Y=a*X+b to model the lane, while curves can use Y=a*X² + b*X+c or even higher order polynomials to build the model. The coefficients “a”, “b”, and “c” should be computed in real time according to captured images. It is noticed that high order polynomial include more terms and needs more computation resource, so the self-driving car system cannot use very high order models. We need to find the balance between the accuracy level and computation requirement.
-*Fixed parameter issue: to improve the flexibility, we can train a neural network model with previous lane detection results (similar to supervised training using marked training set). In this way, the model can extract the lane line information from the marked region inside images or frames of videos. Later on, when we test this model in self-driving road test, the model can automatically move the region of interest towards the position that lane line is more likely to be detected. The difficulty here is how to guarantee the robustness and reliability of our neural network model. I believe it needs huge amount data to train it and test it off line.
+*Straight line problem: the simple improvement is to draw non-straight curves that best match the changing lane line. Straight line uses Y=a*X+b to model the lane, while curves can use Y=a*X² + b*X+c or even higher order polynomials to build the model. The coefficients “a”, “b”, and “c” should be computed in real time according to captured images. It is noticed that high order polynomial include more terms and needs more computation resource, so the self-driving car system cannot use very high order models. We need to find the balance between the accuracy level and computation requirement.
+*Fixed parameter problem: we can use a neural network model with previous lane detection results (. In this way, the model can extract the lane line information from the marked region inside images or frames of videos. 
